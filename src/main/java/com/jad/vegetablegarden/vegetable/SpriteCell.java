@@ -7,26 +7,28 @@ class SpriteCell {
     private SpriteCell next;
 
     public SpriteCell(final Sprite sprite) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        this.sprite = sprite;
+        this.next = null;
     }
 
     public void add(Sprite sprite) {
-        throw new UnsupportedOperationException("Not implemented yet");
-    }
+        if (this.hasNext()){
+            this.next.add(sprite);
+        } else {
+            this.next = new SpriteCell(sprite);
+        }
 
-    public String[] getChars() {
-        throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public String getLine(int line) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return this.sprite.getLine(line);
     }
 
     public SpriteCell getNext() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return this.next;
     }
 
     public boolean hasNext() {
-        throw new UnsupportedOperationException("Not implemented yet");
+        return this.next != null;
     }
 }

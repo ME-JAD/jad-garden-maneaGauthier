@@ -38,13 +38,15 @@ public class Vegetable {
     }
 
     private void manageSprite() {
-        if (this.age < this.growingRange) {
-            this.spriteCell = this.spriteCell.getNext();
+        if (this.age % this.growingRange == 0) {
+            this.goNextSprite();
         }
     }
 
     protected void goNextSprite() {
-        this.spriteCell = this.spriteCell.getNext();
+        if (this.spriteCell.hasNext()){
+            this.spriteCell = this.spriteCell.getNext();
+        }
     }
 
     public String getLine(int line) {
