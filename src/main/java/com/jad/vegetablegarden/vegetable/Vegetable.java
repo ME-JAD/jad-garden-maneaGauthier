@@ -21,7 +21,7 @@ public class Vegetable {
         this.alive = false;
     }
 
-    protected void grow() {
+    public void grow() {
         this.age++;
         if (this.age >= this.maxAge) {
             this.die();
